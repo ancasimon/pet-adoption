@@ -1,1 +1,1 @@
-console.log("Hi Simon Pet Adoption Agency!");
+console.log("Hello, Simon Pet Adoption Agency!");
