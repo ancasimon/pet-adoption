@@ -1,36 +1,52 @@
 body {
-    background-color: beige;
-} 
+  background-color: beige;
+  } 
 
 .categories {
-    display: flex;
-    justify-content: center;
-}
+  display: flex;
+  justify-content: center;
+  }
 
 .button {
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 2em;
-    font-weight: bold;
-}
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2em;
+  font-weight: bold;
+  }
 
 .button_blue {
-    background-color: lightskyblue;
+  background-color: lightskyblue;
   }
 
-  .button_green {
-    background-color: lightgreen;
+.button_green {
+  background-color: lightgreen;
   }
 
-  .button_orange {
-    background-color: orange;
+.button_orange {
+  background-color: orange;
   }
 
-  .button_black {
-    background-color: black;
+.button_black {
+  background-color: black;
+  }
+
+#petList {
+  display: flex;
+  }
+
+.pet {
+  border: 2px solid gray;
+  margin: 5px;
+  padding: 10px;
+  width: 13em;
+  }
+
+img {
+  width: auto;
+  height: 100px; 
   }
