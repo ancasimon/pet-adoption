@@ -1,5 +1,5 @@
 body {
-  background-color: beige;
+  background-color: lightgrey;
   } 
 
 .categories {
@@ -20,11 +20,11 @@ body {
   }
 
 .button_blue {
-  background-color: lightskyblue;
+  background-color: cornflowerblue;
   }
 
 .button_green {
-  background-color: lightgreen;
+  background-color: green;
   }
 
 .button_orange {
@@ -37,16 +37,66 @@ body {
 
 #petList {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1000px;
+  flex: 1 1 30%;
+  justify-content: space-around;
   }
+
+/* .petBox {
+  width: 500px;
+  display: flex;
+} */
 
 .pet {
   border: 2px solid gray;
-  margin: 5px;
-  padding: 10px;
-  width: 13em;
+  /* margin: 5px;
+  padding: 5px; */
+  width: 25%;
+  height: auto;
+  text-align: center;
+  font-size: .9em;
+  margin: 1em;
   }
 
 img {
+  display: block;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
   width: auto;
   height: 100px; 
+  border: 10px solid darkgray;
+  }
+
+  h4 {
+    color: black;
+    background-color: darkgray;
+    margin: 0;
+    padding: 10px 0 0 0 ;
+    height: 2em;
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  h5 {
+    color: black;
+    margin: 0;
+    padding: 10px 0 0 0 ;
+    height: 2em;
+    text-align: center;
+    font-size: 1.25em;
+  }
+
+  .cat {
+    background-color: cornflowerblue;
+  }
+
+  .dog {
+    background-color: green;
+  }
+
+  footer {
+    padding: 2em;
   }
