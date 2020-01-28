@@ -54,18 +54,18 @@ const available_pets = [
 
 // console.log(available_pets);
 
-const buildPetCards = () => {
+const buildPetCards = (arrayOfPets) => {
     let domString = '';
-    for(i = 0; i < available_pets.length; i++) {
+    for(i = 0; i < arrayOfPets.length; i++) {
         domString += '<div class="pet">';
-        domString += `<h4>${available_pets[i].name}</h4>`;
-        domString += `<img src=${available_pets[i].image} alt=${available_pets[i].alt}>`;
-        domString += `<p>Color: ${available_pets[i].color}</p>`;
-        domString += `<p>Special Skill: ${available_pets[i].specialSkill}</p>`;
-        if(available_pets[i].typeOfPet === "Cat") {
-            domString += `<h5 class="cat">${available_pets[i].typeOfPet}</h5>`;
-        } else if(available_pets[i].typeOfPet === "Dog") {
-            domString += `<h5 class="dog">${available_pets[i].typeOfPet}</h5>`;
+        domString += `<h4>${arrayOfPets[i].name}</h4>`;
+        domString += `<img src=${arrayOfPets[i].image} alt=${arrayOfPets[i].alt}>`;
+        domString += `<p>Color: ${arrayOfPets[i].color}</p>`;
+        domString += `<p>Special Skill: ${arrayOfPets[i].specialSkill}</p>`;
+        if(arrayOfPets[i].typeOfPet === "Cat") {
+            domString += `<h5 class="cat">${arrayOfPets[i].typeOfPet}</h5>`;
+        } else if(arrayOfPets[i].typeOfPet === "Dog") {
+            domString += `<h5 class="dog">${arrayOfPets[i].typeOfPet}</h5>`;
         }
         domString += '</div>';
     };
@@ -76,4 +76,43 @@ const buildPetCards = () => {
     printToDom('petList', domString);
 };
 
-buildPetCards();
+buildPetCards(available_pets);
+
+const onlyCats = () => {
+    const theCats = [];
+    for (let i=0; i < available_pets.length; i++) {
+        if (available_pets[i].typeOfPet === "Cat") {
+            theCats.push(available_pets[i]);
+        };
+    };
+    buildPetCards(theCats);
+};
+document.getElementById('Cat').addEventListener('click', onlyCats);
+
+const onlyDogs = () => {
+    const theDogs = [];
+    for (let i=0; i < available_pets.length; i++) {
+        if (available_pets[i].typeOfPet === "Dog") {
+            theDogs.push(available_pets[i]);
+        };
+    };
+    buildPetCards(theDogs);
+};
+document.getElementById('Dog').addEventListener('click', onlyDogs);
+
+const onlyDinos = () => {
+    const theDinos = [];
+    for (let i=0; i < available_pets.length; i++) {
+        if (available_pets[i].typeOfPet === "Dino") {
+            theDinos.push(available_pets[i]);
+        };
+    };
+    buildPetCards(theDinos);
+};
+document.getElementById('Dino').addEventListener('click', onlyDinos);
+
+const all = () => {
+    buildPetCards(available_pets);
+};
+
+document.getElementById('All').addEventListener('click', all);
