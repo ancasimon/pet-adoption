@@ -41,7 +41,7 @@ body {
   flex-wrap: wrap;
   width: 1000px;
   flex: 1 1 30%;
-  justify-content: space-around;
+  justify-content: space-evenly;
   }
 
 /* .petBox {
@@ -95,6 +95,10 @@ img {
 
   .dog {
     background-color: green;
+  }
+
+  .dino {
+    background-color: orange;
   }
 
   footer {

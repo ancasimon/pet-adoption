@@ -43,6 +43,14 @@ const available_pets = [
     typeOfPet: "Dog"
     },
     {
+    image: "http://elalci.com/wp-content/uploads/2017/11/TRex1.jpg",
+    alt: "a Tyrannosaurus Rex dinosaur opening its mouth wide",
+    name: "Tommy, the T-rex",
+    color: "Green",
+    specialSkill: "Roars super-loudly",
+    typeOfPet: "Dino"
+    },
+    {
     image: "https://cdn1-www.cattime.com/assets/uploads/2012/07/bengal-cat-breed-picture.jpg",
     alt: "brown cat with black spot looking straight at the viewer",
     name: "Tiger, the Bengal Cat",
@@ -51,8 +59,6 @@ const available_pets = [
     typeOfPet: "Cat"
     }
 ];
-
-// console.log(available_pets);
 
 const buildPetCards = (arrayOfPets) => {
     let domString = '';
@@ -66,17 +72,17 @@ const buildPetCards = (arrayOfPets) => {
             domString += `<h5 class="cat">${arrayOfPets[i].typeOfPet}</h5>`;
         } else if(arrayOfPets[i].typeOfPet === "Dog") {
             domString += `<h5 class="dog">${arrayOfPets[i].typeOfPet}</h5>`;
+        } else if(arrayOfPets[i].typeOfPet === "Dino") {
+            domString += `<h5 class="dino">${arrayOfPets[i].typeOfPet}</h5>`;
         }
         domString += '</div>';
     };
     const printToDom = (divId, textToPrint) => {
         const selectedDiv = document.getElementById(divId);
-       selectedDiv.innerHTML = domString;
+       selectedDiv.innerHTML = textToPrint;
     };
     printToDom('petList', domString);
 };
-
-buildPetCards(available_pets);
 
 const onlyCats = () => {
     const theCats = [];
@@ -87,7 +93,6 @@ const onlyCats = () => {
     };
     buildPetCards(theCats);
 };
-document.getElementById('Cat').addEventListener('click', onlyCats);
 
 const onlyDogs = () => {
     const theDogs = [];
@@ -98,7 +103,6 @@ const onlyDogs = () => {
     };
     buildPetCards(theDogs);
 };
-document.getElementById('Dog').addEventListener('click', onlyDogs);
 
 const onlyDinos = () => {
     const theDinos = [];
@@ -109,10 +113,21 @@ const onlyDinos = () => {
     };
     buildPetCards(theDinos);
 };
-document.getElementById('Dino').addEventListener('click', onlyDinos);
 
 const all = () => {
     buildPetCards(available_pets);
 };
 
-document.getElementById('All').addEventListener('click', all);
+const events = () => {
+    document.getElementById('Cat').addEventListener('click', onlyCats);
+    document.getElementById('Dog').addEventListener('click', onlyDogs);
+    document.getElementById('Dino').addEventListener('click', onlyDinos);
+    document.getElementById('All').addEventListener('click', all);
+}; 
+
+const init = () => {
+    buildPetCards(available_pets);
+    events();
+}; 
+
+init();
