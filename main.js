@@ -63,19 +63,26 @@ const available_pets = [
 const buildPetCards = (arrayOfPets) => {
     let domString = '';
     for(i = 0; i < arrayOfPets.length; i++) {
-        domString += '<div class="pet">';
-        domString += `<h4>${arrayOfPets[i].name}</h4>`;
-        domString += `<img src=${arrayOfPets[i].image} alt=${arrayOfPets[i].alt}>`;
-        domString += `<p>Color: ${arrayOfPets[i].color}</p>`;
-        domString += `<p>Special Skill: ${arrayOfPets[i].specialSkill}</p>`;
-        if(arrayOfPets[i].typeOfPet === "Cat") {
-            domString += `<h5 class="cat">${arrayOfPets[i].typeOfPet}</h5>`;
-        } else if(arrayOfPets[i].typeOfPet === "Dog") {
-            domString += `<h5 class="dog">${arrayOfPets[i].typeOfPet}</h5>`;
-        } else if(arrayOfPets[i].typeOfPet === "Dino") {
-            domString += `<h5 class="dino">${arrayOfPets[i].typeOfPet}</h5>`;
-        }
-        domString += '</div>';
+        domString += '<div class="flip-card pet">';
+            domString += '<div class="flip-card-inner">';
+                domString += '<div class="flip-card-front">';
+                    domString += `<h4>${arrayOfPets[i].name}</h4>`;
+                    domString += `<img src=${arrayOfPets[i].image} alt=${arrayOfPets[i].alt}>`;
+                    domString += `<p>Color: ${arrayOfPets[i].color}</p>`;
+                    domString += `<p>Special Skill: ${arrayOfPets[i].specialSkill}</p>`;
+                    if(arrayOfPets[i].typeOfPet === "Cat") {
+                        domString += `<h5 class="cat">${arrayOfPets[i].typeOfPet}</h5>`;
+                    } else if(arrayOfPets[i].typeOfPet === "Dog") {
+                        domString += `<h5 class="dog">${arrayOfPets[i].typeOfPet}</h5>`;
+                    } else if(arrayOfPets[i].typeOfPet === "Dino") {
+                        domString += `<h5 class="dino">${arrayOfPets[i].typeOfPet}</h5>`;
+                    }
+                domString += '</div>';
+                domString += '<div class="flip-card-back">';
+                    domString += `<h1>${arrayOfPets[i].name}!!!!!!!</h1>`;
+                domString += '</div>';
+            domString += '</div>';
+            domString += '</div>';
     };
     const printToDom = (divId, textToPrint) => {
         const selectedDiv = document.getElementById(divId);
